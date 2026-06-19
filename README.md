@@ -2,16 +2,15 @@
 
 Setup — running both projects together
 
-0. Clone the repo
+1-Clone the repo
 
-bashgit clone https://github.com/hussien-alloush/Ai-support-ticket.git
+git clone https://github.com/hussien-alloush/Ai-support-ticket.git
 cd Ai-support-ticket
 
-1. Backend
+2. Backend
 
-bashcd backend
+cd backend
 npm install
-cp .env.example .env
 
 Fill in .env:
 
@@ -26,11 +25,11 @@ bashnpm run dev
 
 You should see MongoDB connected successfully and Server running on port 5000 in the terminal.
 
-2. Frontend
+3. Frontend
 
 Open a second terminal (keep the backend running in the first one):
 
-bashcd frontend
+cd frontend
 npm install
 npm run dev
 
@@ -52,13 +51,3 @@ wrote, edit it if needed, and send it.
 
 
 
-API reference
-
-Auth
-
-MethodRouteDescriptionPOST/api/auth/registerCreate a customer or agent accountPOST/api/auth/loginLog in, returns a JWT
-
-Tickets (require Authorization: Bearer <token>)
-
-MethodRouteRoleDescriptionPOST/api/ticketscustomerCreate a ticket — triggers AI analysisGET/api/ticketsanyList tickets (customers see only their own); supports ?status= and ?priority= filtersGET/api/tickets/:idanyGet a single ticketPOST/api/tickets/:id/replyagent, adminReply to a ticketPATCH/api/tickets/:id/statusagent, adminUpdate ticket status
- 
